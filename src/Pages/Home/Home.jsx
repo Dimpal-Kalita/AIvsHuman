@@ -1,5 +1,6 @@
 import { Button } from "../../Components";
 import { useFetchOnAction } from "../../Hooks";
+import Contributors from "../Contributors/Contributors";
 
 import style from "./Home.module.scss";
 
@@ -23,6 +24,8 @@ const Home = () => {
           <Button type="button" onClick={handleClick}>
             Health Check
           </Button>
+
+          <Contributors />
         </>
       )}
     </main>
