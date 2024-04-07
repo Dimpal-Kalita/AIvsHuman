@@ -1,5 +1,10 @@
-# React-JS-App Template v1.0.0
-GDSC NIT Silchar's Template for a JS + React + SASS app.
+
+
+## AIM
+To identify Human and AI generated text using DEEP LEARNING models.
+
+
+
 
 ## Features, Tools and Technologies
 - JavaScript
