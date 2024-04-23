@@ -14,11 +14,16 @@
     "prepare": "simple-git-hooks"
   },
   "dependencies": {
+    "@tensorflow/tfjs": "^4.18.0",
+    "@tensorflow/tfjs-data": "^4.18.0",
     "@vitejs/plugin-react": "^4.2.1",
+    "install": "^0.13.0",
+    "npm": "^10.5.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-icons": "^5.0.1",
     "react-router-dom": "^6.22.2",
+    "tfjs-data": "github:tensorflow/tfjs-data",
     "vite": "^5.1.4"
   },
   "devDependencies": {

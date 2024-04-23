@@ -14,12 +14,12 @@ const Navbar = () => {
       <header className="App-header">
         <nav className={`${styles.navbar}`}>
           {/* logo */}
-          <a href="#home" className={`${styles.logo}`}>
+          <a href="/" className={`${styles.logo}`}>
             AiVsHuman
           </a>
           <ul className={`${styles.navMenu} ${isActive ? styles.active : ""}`}>
             <div onClick={removeActive}>
-              <a href="#home" className={`${styles.navLink}`}>
+              <a href="/" className={`${styles.navLink}`}>
                 Home
               </a>
             </div>
@@ -29,15 +29,15 @@ const Navbar = () => {
               </a>
             </div>
             <div onClick={removeActive}>
-              <a href="#home" className={`${styles.navLink}`}>
-                Collaborations
+              <a href="/contributors" className={`${styles.navLink}`}>
+                Contributors
               </a>
             </div>
-            <div onClick={removeActive}>
+            {/* <div onClick={removeActive}>
               <a href="#home" className={`${styles.navLink}`}>
                 Contact
               </a>
-            </div>
+            </div> */}
           </ul>
           <div
             className={`${styles.hamburger} ${isActive ? styles.active : ""}`}

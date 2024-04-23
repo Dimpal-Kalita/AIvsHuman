@@ -1,15 +1,71 @@
+import * as tf from "@tensorflow/tfjs";
+
 import React, { useState } from "react";
 import styles from "./Home.module.scss";
+import PredictionComponent from "./Prediction/Prediction";
 
 const Home = () => {
   const [text, setText] = useState("");
+  const [loading, setLoading] = useState(false);
+  const [prediction, setPrediction] = useState(null);
 
   const handleTextChange = (e) => {
     setText(e.target.value);
   };
 
-  const handleUpload = () => {
-    console.log("Text uploaded:", text);
+  const tokenize = (texty) => {
+    return texty
+      .toLowerCase()
+      .split(" ")
+      .map((word) => word.charCodeAt(0));
+  };
+  // Padding function
+  const padSequences = (sequences, maxLength) => {
+    return sequences.map((seq) => {
+      if (seq.length > maxLength) {
+        return seq.slice(0, maxLength);
+      }
+      const padding = Array(maxLength - seq.length).fill(0);
+      return seq.concat(padding);
+    });
+  };
+
+  const handleUpload = async () => {
+    // Tokenize input text
+    setLoading(true);
+
+    const sequences = [tokenize(text)];
+
+    // Pad sequences
+    const maxLength = 100; // Adjust maxlen as needed
+    const paddedSequences = padSequences(sequences, maxLength); // Adjust maxlen as needed
+
+    // Convert padded sequences to a tensor
+    const paddedSequencesTensor = tf.tensor2d(paddedSequences);
+
+    // Reshape tensor to remove extra dimension
+    const reshapedTensor = paddedSequencesTensor.reshape([1, maxLength]);
+    const modelUrl = "src/Pages/Home/tfjs_artifacts/model.json";
+
+    try {
+      // Load the model
+      const model = await tf.loadLayersModel(modelUrl);
+
+      // console.log('Model loaded successfully ');
+
+      // Make predictions
+      const predict = model.predict(reshapedTensor);
+
+      // Log the prediction
+      // console.log('Prediction:', prediction.dataSync()[0]);
+
+      setLoading(false);
+      setPrediction(predict.dataSync()[0]);
+    } catch (error) {
+      setLoading(false);
+
+      // console.error('Error loading the model:', error);
+    }
   };
 
   // Word counter function
@@ -34,10 +90,12 @@ const Home = () => {
           Upload
         </button>
       </div>
+      {loading && <div className={styles.loading}>Loading...</div>}
+      {prediction !== null && <PredictionComponent prediction={prediction} />}
       {/* </div> */}
 
       {/* <div className={styles.whyUseWebsite}> */}
-      <h2>Why to use US?</h2>
+      {/* <h2>Why to use US?</h2>
       <div className={styles.cardContainer}>
         <div className={styles.card}>
           <h3>Accurate Analysis</h3>
@@ -59,7 +117,7 @@ const Home = () => {
             analysis.
           </p>
         </div>
-      </div>
+      </div> */}
     </div>
     // </div>
   );
