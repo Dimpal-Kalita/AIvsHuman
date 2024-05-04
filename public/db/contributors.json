@@ -1,66 +1,58 @@
 [
   {
     "id": 1,
-    "name": "Parthib Toppo",
-    "role": "Student",
-    "profilePic": "data:image/jpeg;base64,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",
-    "email": "toppoparthib@gmail.com",
-    "phone": "9954276839"
+    "name": "Partha Pakray",
+    "role": "Professor",
+    "profilePic": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTXzfMlGr-a63NNRJ2bD4tnWDHTpCaOwjZaPgeLHKE28w&s",
+    "email": "partha@cse.nits.ac.in",
+    "phone": ""
   },
   {
     "id": 2,
-    "name": "Abhishek Ranjan",
-    "role": "Student",
-    "profilePic": "http://surl.li/sitpw",
-    "email": "abhiran14082002@gmail.com",
-    "phone": "7099485985"
+    "name": "Yadagiri K",
+    "role": "Research Scholar",
+    "profilePic": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTXzfMlGr-a63NNRJ2bD4tnWDHTpCaOwjZaPgeLHKE28w&s",
+    "email": "annepaka22_rs@cse.nits.ac.in",
+    "phone": ""
   },
   {
     "id": 3,
-    "name": "Alice Johnson",
-    "role": "Professor",
-    "profilePic": "http://surl.li/sitpw",
-    "email": "alice@example.com",
-    "phone": "456-789-0123"
+    "name": "Dimpal Kalita",
+    "role": "Student",
+    "profilePic": "https://media.licdn.com/dms/image/D4D03AQE3JF1zwEyBuA/profile-displayphoto-shrink_800_800/0/1681667271749?e=1720051200&v=beta&t=RqzEZX5gHvZuBNDcd0WNM479SMbCm9dQXmoOYB8Iqvg",
+    "email": "kalitadimpal112@gmail.com",
+    "phone": "8486325816"
   },
   {
     "id": 4,
-    "name": "Ashish Kumar Boston",
+    "name": "Trilasha Mazumder",
     "role": "Student",
-    "profilePic": "http://surl.li/sitpw",
-    "email": "bob@example.com",
-    "phone": "789-012-3456"
+    "profilePic": "https://media.licdn.com/dms/image/D4D03AQFFvF1sOdOpVQ/profile-displayphoto-shrink_800_800/0/1687055171471?e=1720051200&v=beta&t=liUupeT9AiKsRHm2ZiDqJ2-2MammX5Rg6JGSPpExQ0A",
+    "email": "tilupm2020@gmail.com",
+    "phone": ""
   },
   {
     "id": 5,
-    "name": "Emily Davis",
-    "role": "Professor",
-    "profilePic": "http://surl.li/sitpw",
-    "email": "emily@example.com",
-    "phone": "012-345-6789"
+    "name": "Abhisek Ranjan",
+    "role": "Student",
+    "profilePic": "https://media.licdn.com/dms/image/C4D03AQGj_8uaj1eekQ/profile-displayphoto-shrink_800_800/0/1652167599605?e=1720051200&v=beta&t=XOerAtKuCVCmZF84G4N_0ABGqkEvjnsIha_qNkfr1NE",
+    "email": "abhiran14082002@gmail.com",
+    "phone": ""
   },
   {
     "id": 6,
-    "name": "Michael Wilson",
+    "name": "Ashish Boston",
     "role": "Student",
-    "profilePic": "http://surl.li/sitpw",
-    "email": "michael@example.com",
-    "phone": "345-678-9012"
+    "profilePic": "https://media.licdn.com/dms/image/D5603AQHfHbl_fxMy8w/profile-displayphoto-shrink_800_800/0/1714826873935?e=1720051200&v=beta&t=XI5YK4mF6FTC2qsWQUxHuTHi45DSPCT94U4ISM-47k0",
+    "email": "kumarashishbostan@gmail.com",
+    "phone": ""
   },
   {
     "id": 7,
-    "name": "Laura Lee",
-    "role": "Professor",
-    "profilePic": "http://surl.li/sitpw",
-    "email": "laura@example.com",
-    "phone": "678-901-2345"
-  },
-  {
-    "id": 8,
-    "name": "Chris Evans",
+    "name": "Parthib Toppo",
     "role": "Student",
-    "profilePic": "http://surl.li/sitpw",
-    "email": "chris@example.com",
-    "phone": "901-234-5678"
+    "profilePic": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTXzfMlGr-a63NNRJ2bD4tnWDHTpCaOwjZaPgeLHKE28w&s",
+    "email": "parthib21_ug@cse.nits.ac.in",
+    "phone": ""
   }
 ]
