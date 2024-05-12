@@ -45,7 +45,7 @@ const Home = () => {
 
     // Reshape tensor to remove extra dimension
     const reshapedTensor = paddedSequencesTensor.reshape([1, maxLength]);
-    const modelUrl = "src/Pages/Home/tfjs_artifacts/model.json";
+    const modelUrl = "public/db/tfjs_artifacts/model.json";
 
     try {
       // Load the model
