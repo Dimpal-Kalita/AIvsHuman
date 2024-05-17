@@ -1,5 +1,3 @@
-import * as tf from "@tensorflow/tfjs";
-
 import React, { useState } from "react";
 import styles from "./Home.module.scss";
 import PredictionComponent from "./Prediction/Prediction";
@@ -12,59 +10,33 @@ const Home = () => {
   const handleTextChange = (e) => {
     setText(e.target.value);
   };
-
-  const tokenize = (texty) => {
-    return texty
-      .toLowerCase()
-      .split(" ")
-      .map((word) => word.charCodeAt(0));
-  };
-  // Padding function
-  const padSequences = (sequences, maxLength) => {
-    return sequences.map((seq) => {
-      if (seq.length > maxLength) {
-        return seq.slice(0, maxLength);
-      }
-      const padding = Array(maxLength - seq.length).fill(0);
-      return seq.concat(padding);
-    });
-  };
-
   const handleUpload = async () => {
-    // Tokenize input text
     setLoading(true);
-
-    const sequences = [tokenize(text)];
-
-    // Pad sequences
-    const maxLength = 100; // Adjust maxlen as needed
-    const paddedSequences = padSequences(sequences, maxLength); // Adjust maxlen as needed
-
-    // Convert padded sequences to a tensor
-    const paddedSequencesTensor = tf.tensor2d(paddedSequences);
-
-    // Reshape tensor to remove extra dimension
-    const reshapedTensor = paddedSequencesTensor.reshape([1, maxLength]);
-    const modelUrl = "db/tfjs_artifacts/model.json";
-
     try {
-      // Load the model
-      const model = await tf.loadLayersModel(modelUrl);
+      // Ensure the text variable is properly defined and formatted
+      if (!text) {
+        throw new Error("Text is not defined");
+      }
 
-      // console.log('Model loaded successfully ');
+      const response = await fetch("http://127.0.0.1:5000/predict", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ text: text }), // Ensure text is correctly JSON.stringified
+      });
 
-      // Make predictions
-      const predict = model.predict(reshapedTensor);
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
 
-      // Log the prediction
-      // console.log('Prediction:', prediction.dataSync()[0]);
-
-      setLoading(false);
-      setPrediction(predict.dataSync()[0]);
+      const data = await response.json();
+      setPrediction(data.prediction);
     } catch (error) {
+      console.error("Error during fetch:", error);
+      // Handle error (e.g., show error message to user)
+    } finally {
       setLoading(false);
-
-      // console.error('Error loading the model:', error);
     }
   };
 
