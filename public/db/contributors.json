@@ -54,5 +54,21 @@
     "profilePic": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTXzfMlGr-a63NNRJ2bD4tnWDHTpCaOwjZaPgeLHKE28w&s",
     "email": "parthib21_ug@cse.nits.ac.in",
     "phone": ""
+  },
+  {
+    "id": 8,
+    "name": "Suraiya Parween",
+    "role": "Student",
+    "profilePic": "https://media.licdn.com/dms/image/D4D03AQHnwlJo6ert-g/profile-displayphoto-shrink_800_800/0/1679753969700?e=1721260800&v=beta&t=cdA0QGziT4I2ERcEw8riB5inogmWabG2Rf3R1XqffbM",
+    "email": "suru786parween@gmail.com",
+    "phone": ""
+  },
+  {
+    "id": 9,
+    "name": "Lavanya Shree",
+    "role": "Student",
+    "profilePic": "https://media.licdn.com/dms/image/D4D03AQEATyZJxgPXSQ/profile-displayphoto-shrink_400_400/0/1673105296656?e=1721260800&v=beta&t=IcgL7PscALlSV6MnoDrChuWDxbqebegQayHMCMWUP7Q",
+    "email": "lavanya1shree@gmail.com",
+    "phone": ""
   }
 ]

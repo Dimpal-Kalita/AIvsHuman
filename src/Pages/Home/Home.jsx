@@ -23,7 +23,7 @@ const Home = () => {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ text: text }), // Ensure text is correctly JSON.stringified
+        body: JSON.stringify({ text }), // Ensure text is correctly JSON.stringified
       });
 
       if (!response.ok) {
@@ -34,7 +34,6 @@ const Home = () => {
       setPrediction(data.prediction);
     } catch (error) {
       console.error("Error during fetch:", error);
-      // Handle error (e.g., show error message to user)
     } finally {
       setLoading(false);
     }
