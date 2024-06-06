@@ -16,7 +16,9 @@ const Contributors = () => {
         return response.json();
       })
       .then((data) => {
-        const profs = data.filter((contributor) => contributor.role === "Professor");
+        const profs = data.filter(
+          (contributor) => contributor.role === "Associate Professor"
+        );
         const stus = data.filter((contributor) => contributor.role === "Student");
         const resScholars = data.filter(
           (contributor) => contributor.role === "Research Scholar"
